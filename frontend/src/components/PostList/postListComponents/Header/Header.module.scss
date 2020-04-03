@@ -1,0 +1,13 @@
+.wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content:flex-start;
+    & > div {
+        padding-right: 10px;
+    }
+    span{
+        margin-right: 5px;
+        display: inline;
+        font-size: 10px;
+    }
+}

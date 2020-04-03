@@ -32,6 +32,7 @@ function getData (token) {
   if (data == null) {
     data = db[token] = clone(defaultData)
   }
+  console.log('inside Get Data', data, token)
   return data
 }
 
@@ -58,6 +59,7 @@ function get (token, id) {
 function getAll (token) {
   return new Promise((res) => {
     const posts = getData(token)
+    console.log('get getAll',getData(token))
     let keys = Object.keys(posts)
     let filtered_keys = keys.filter(key => !posts[key].deleted)
     res(filtered_keys.map(key => posts[key]))
@@ -79,7 +81,7 @@ function add (token, post) {
       deleted: false,
       commentCount: 0
     }
-
+    console.log('add getData',getData(token));
     res(posts[post.id])
   })
 }

@@ -181,6 +181,7 @@ app.post('/posts', bodyParser.json(), (req, res) => {
 })
 
 app.get('/posts/:id', (req, res) => {
+  console.log('/posts/:id', req.params.id);
     posts.get(req.token, req.params.id)
       .then(
           (data) => res.send(data),
@@ -207,7 +208,8 @@ app.delete('/posts/:id', (req, res) => {
       )
 })
 
-app.post('/posts/:id', bodyParser.json(), (req, res) => {
+app.post('/posts/:id', bodyParser.json(), (req, res) => {~
+  console.log('/posts/:id',req.body, req.params.id);
     const { option } = req.body
     const id = req.params.id
     posts.vote(req.token, id, option)
@@ -288,6 +290,7 @@ app.post('/comments', bodyParser.json(), (req, res) => {
 })
 
 app.post('/comments/:id', bodyParser.json(), (req, res) => {
+  console.log(req.body);
     const { option } = req.body
     comments.vote(req.token, req.params.id, option)
       .then(

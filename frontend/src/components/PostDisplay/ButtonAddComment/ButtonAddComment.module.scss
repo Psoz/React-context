@@ -1,0 +1,18 @@
+.button {
+    background: #1d1a1a;
+    -webkit-appearance: none;
+    color: white;
+    padding: 10px 30px;
+    font-size: 12px;
+    box-shadow: 0px 0px 0px transparent;
+    border: 1px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    transition: all 0.5s ease;
+    margin-top: 20px;
+}
+
+.button:hover{
+    background: white;
+    color:black;
+    border: 1px solid black;
+}

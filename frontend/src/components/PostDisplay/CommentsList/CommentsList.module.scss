@@ -1,0 +1,23 @@
+.wrapper{
+    margin-top: 20px;
+    border-top: 1px solid black;
+    & > span {
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+.innerWrapper {
+    position: relative;
+    padding-bottom: 10px;
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 20%;
+        min-width: 200px;
+        background-color: black;
+    }
+}

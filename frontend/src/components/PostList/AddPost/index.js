@@ -1,0 +1,1 @@
+export {ButtonAddPost} from './ButtonAddPost';

@@ -44,8 +44,10 @@ function getByParent (token, parentId) {
 }
 
 function get (token, id) {
+  
   return new Promise((res) => {
     const comments = getData(token)
+    console.log('comments',id, comments, comments[id])
     res(
       comments[id].deleted || comments[id].parentDeleted
         ? {}
@@ -75,11 +77,13 @@ function add (token, comment) {
 }
 
 function vote (token, id, option) {
+  console.log(id,option);
   return new Promise((res) => {
     let comments = getData(token)
     comment = comments[id]
     switch(option) {
         case "upVote":
+          console.log('I upvote');
             comment.voteScore = comment.voteScore + 1
             break
         case "downVote":
