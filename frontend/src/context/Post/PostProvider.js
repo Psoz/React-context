@@ -41,6 +41,7 @@ const PostProvider = ({children}) => {
         await axios.post(host + `posts`,post,headers)
         .then(() => {
             loadPosts();
+            closeModal('globalModal');
         })
         
     }
